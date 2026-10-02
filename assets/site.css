@@ -226,3 +226,75 @@ footer .legal-row a,footer .linklike{color:#fff;text-decoration:underline;text-u
 /* amber step numbers need a darker amber on light cards */
 section:not(.dark) .card .num{color:#8A5A00}
 .consent-opts[hidden]{display:none}
+
+/* ===== PREVIEW: gradients ===== */
+:root{--g-navy:linear-gradient(135deg,#0A1726 0%,#0F2236 40%,#1F5C96 100%);--g-amber:linear-gradient(135deg,#FFD25E 0%,#F2B632 50%,#E08A12 100%);--g-blue:linear-gradient(135deg,#2B8BD6 0%,#1F6FB2 55%,#154E82 100%)}
+body{background:linear-gradient(180deg,#FBF9F4 0%,#EEF3F8 100%)}
+.hdr{background:linear-gradient(90deg,#0A1726,#0F2236 55%,#16436F)}
+.topbar{background:var(--g-amber)}
+.btn-call{background:var(--g-amber);box-shadow:0 8px 20px -8px rgba(224,138,18,.7);position:relative;overflow:hidden}
+.btn-call:hover{background:var(--g-amber);filter:brightness(1.06)}
+.btn-book{background:var(--g-blue);box-shadow:0 8px 20px -8px rgba(31,111,178,.7)}
+.btn-dark{background:linear-gradient(135deg,#0F2236,#1B4570)}
+.hero{background:var(--g-navy);background-size:200% 200%;animation:shift 18s ease-in-out infinite alternate}
+.hero-img{opacity:.8}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,23,38,.82) 0%,rgba(15,34,54,.45) 50%,rgba(31,111,178,.15) 100%);z-index:1}
+.hero .wrap{position:relative;z-index:2}
+.hero h1 em,.hero .eyebrow{background:var(--g-amber);-webkit-background-clip:text;background-clip:text;color:transparent}
+.coupon{background:linear-gradient(160deg,#fff 0%,#EAF2FA 100%)}
+.coupon .price{background:linear-gradient(135deg,#0F2236,#1F6FB2);-webkit-background-clip:text;background-clip:text;color:transparent;white-space:nowrap;font-size:clamp(28px,3.3vw,44px)!important}
+.trust{background:linear-gradient(90deg,#fff,#EAF2FA)}
+.ti .ic,.card .ic{background:linear-gradient(135deg,#1B4570,#0F2236);color:var(--amber)}
+.card,.step{background:linear-gradient(180deg,#fff,#F3F7FB)}
+.dark,.topo{background-image:linear-gradient(135deg,#0A1726 0%,#0F2236 50%,#1F5C96 100%)}
+.dark .card{background:linear-gradient(160deg,rgba(255,255,255,.10),rgba(255,255,255,.03))}
+.white{background:linear-gradient(180deg,#fff,#F1F6FB)}
+.final{background:var(--g-blue)}
+footer{background:linear-gradient(180deg,#0F2236,#0A1726)}
+section:not(.dark) .card .num{color:#8A5A00}
+/* ===== PREVIEW: waves + motion ===== */
+.ridge{left:0;right:auto;width:200%;animation:wave 16s linear infinite;will-change:transform}
+@keyframes wave{to{transform:translateX(-50%)}}
+@keyframes shift{to{background-position:100% 100%}}
+@keyframes float{50%{transform:translateY(-8px)}}
+.btn-call::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.55),transparent);transform:skewX(-20deg);animation:shine 4.5s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-120%}100%{left:160%}}
+.hero .btn-call{animation:pulse 2.4s ease-out infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(242,182,50,.7)}70%{box-shadow:0 0 0 18px rgba(242,182,50,0)}100%{box-shadow:0 0 0 0 rgba(242,182,50,0)}}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+a.card,.step,.rev,.gallery figure{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+a.card:hover,.step:hover{transform:translateY(-8px);box-shadow:0 22px 40px -22px rgba(15,34,54,.6)}
+a.card:hover .ic{transform:rotate(-8deg) scale(1.12)}
+.card .ic{transition:transform .25s ease}
+.gallery figure:hover{transform:scale(1.03)}
+.btn{transition:transform .15s ease,filter .15s ease}
+.btn:hover{transform:translateY(-2px)}
+/* hero entrance on load */
+.hero .wrap>div:first-child>*{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero .eyebrow{animation-delay:.05s}.hero h1{animation-delay:.18s}.hero .lede{animation-delay:.32s}
+.hero .ctas{animation-delay:.46s}.hero .checks{animation-delay:.6s}
+.hero .coupon{animation:rise .9s .35s cubic-bezier(.2,.7,.2,1) both,float 5s 1.4s ease-in-out infinite}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+.hero h1 em{position:relative;display:inline-block}
+.hero h1 em::after{content:"";position:absolute;left:0;bottom:-4px;height:5px;width:100%;border-radius:4px;background:var(--g-amber);transform-origin:left;animation:draw 1s .9s cubic-bezier(.2,.7,.2,1) both}
+@keyframes draw{from{transform:scaleX(0)}}
+.ridge2{position:absolute;left:0;right:auto;bottom:-1px;width:200%;height:70px;z-index:2;color:rgba(242,182,50,.35);animation:wave2 24s linear infinite reverse;pointer-events:none}
+@keyframes wave2{to{transform:translateX(-50%)}}
+.sec-head h2{position:relative;padding-bottom:14px}
+.sec-head h2::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:0;border-radius:3px;background:var(--g-amber);transition:width .9s .3s cubic-bezier(.2,.7,.2,1)}
+.sec-head.in h2::after{width:64px}
+.rv.in .ic{animation:pop .6s .15s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes pop{from{transform:scale(.4);opacity:0}}
+.num,.step .k{display:inline-block}
+.rv.in .num,.rv.in .k{animation:pop .6s .2s cubic-bezier(.3,1.6,.5,1) both}
+.btn-call svg{animation:ring 5s ease-in-out infinite;transform-origin:50% 50%}
+@keyframes ring{0%,86%,100%{transform:rotate(0)}88%{transform:rotate(-16deg)}90%{transform:rotate(14deg)}92%{transform:rotate(-12deg)}94%{transform:rotate(8deg)}96%{transform:rotate(0)}}
+.hdr{transition:box-shadow .3s ease}
+.hdr.scrolled{box-shadow:0 12px 30px -14px rgba(0,0,0,.6)}
+.gallery img{transition:transform 6s ease}
+.gallery figure:hover img{transform:scale(1.08)}
+html{scroll-behavior:smooth}
+
+/* respect "reduce motion": no animation, everything stays visible */
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}

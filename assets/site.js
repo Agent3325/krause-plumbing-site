@@ -89,3 +89,24 @@ document.querySelectorAll("form.js-request").forEach(function (form) {
   const c = read();
   if (c) loadTags(c); else open(false);
 })();
+
+/* ---------- Motion: scroll reveal, header shadow, second wave ---------- */
+(function () {
+  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const hdr = document.querySelector(".hdr");
+  if (hdr) window.addEventListener("scroll", function () { hdr.classList.toggle("scrolled", window.scrollY > 10); }, { passive: true });
+  if (reduced) return;
+  document.querySelectorAll(".hero").forEach(function (h) {
+    const r = h.querySelector(".ridge");
+    if (r) { const c = r.cloneNode(true); c.classList.add("ridge2"); c.classList.remove("ridge"); h.appendChild(c); }
+  });
+  if (!("IntersectionObserver" in window)) return;
+  document.documentElement.classList.add("js");
+  const io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".card, .step, .rev, .gallery figure, .sec-head, .photo, .ti").forEach(function (el, i) {
+    if (el.getBoundingClientRect().top < window.innerHeight * 0.9) return;
+    el.classList.add("rv"); el.style.transitionDelay = (i % 4) * 70 + "ms"; io.observe(el);
+  });
+})();
