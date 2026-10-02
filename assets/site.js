@@ -92,7 +92,16 @@ document.querySelectorAll("form.js-request").forEach(function (form) {
 
 /* ---------- Motion: scroll reveal, header shadow, second wave ---------- */
 (function () {
-  const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const root = document.documentElement;
+  const reduced = root.classList.contains("no-motion");
+  document.querySelectorAll("[data-motion-toggle]").forEach(function (b) {
+    b.textContent = "Animations: " + (reduced ? "off" : "on");
+    b.setAttribute("aria-pressed", reduced ? "false" : "true");
+    b.addEventListener("click", function () {
+      try { localStorage.setItem("kp_motion", reduced ? "on" : "off"); } catch (e) {}
+      location.reload();
+    });
+  });
   const hdr = document.querySelector(".hdr");
   if (hdr) window.addEventListener("scroll", function () { hdr.classList.toggle("scrolled", window.scrollY > 10); }, { passive: true });
   if (reduced) return;

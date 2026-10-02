@@ -296,5 +296,6 @@ a.card:hover .ic{transform:rotate(-8deg) scale(1.12)}
 .gallery figure:hover img{transform:scale(1.08)}
 html{scroll-behavior:smooth}
 
-/* respect "reduce motion": no animation, everything stays visible */
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}*,*::before,*::after{animation:none!important;transition:none!important}.js .rv{opacity:1;transform:none}}
+/* motion: on by default, off for "reduce motion" devices, and the visitor can switch it (footer "Animations") */
+html.no-motion *,html.no-motion *::before,html.no-motion *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+@media (prefers-reduced-motion:reduce){html:not(.motion) *,html:not(.motion) *::before,html:not(.motion) *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
