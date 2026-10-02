@@ -1,0 +1,12 @@
+Stock photos from Unsplash (Unsplash License: free for commercial use, no attribution required). Replace with real Krause photos when available.
+
+tech-sink.jpg: Timur Shakerzianov - https://unsplash.com/photos/wzIjLL4KB-4
+tech-toilet.jpg: Timur Shakerzianov - https://unsplash.com/photos/VAGbjhkxg6I
+under-sink.jpg: Timur Shakerzianov - https://unsplash.com/photos/c314Gh8dXAo
+sink-drain.jpg: Daniel Dan - https://unsplash.com/photos/DqC8-L5oNlo
+floor-drain.jpg: Algernai Hayes - https://unsplash.com/photos/Bsw-804FEtQ
+kitchen.jpg: Clay Banks - https://unsplash.com/photos/rLQwcbZjrcU
+cabin-snow.jpg: Greg Althoff - https://unsplash.com/photos/Wy9aq4yMq_g
+mountains.jpg: Nicholas Mullins - https://unsplash.com/photos/EHxJdl1QMPA
+mountains-sun.jpg: Nicholas Mullins - https://unsplash.com/photos/4ZocQvlgicM
+frozen-pipe.jpg: Sergej - https://unsplash.com/photos/fdKrvk6bh-g

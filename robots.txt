@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /drain-cleaning-special/
+Sitemap: https://agent3325.github.io/krause-plumbing-site/sitemap.xml
